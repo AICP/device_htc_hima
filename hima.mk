@@ -31,6 +31,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 PRODUCT_ENFORCE_RRO_TARGETS := framework-res
 
+# Boot animation
+TARGET_BOOTANIMATION_HALF_RES := true
+
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
