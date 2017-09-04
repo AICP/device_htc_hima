@@ -50,3 +50,11 @@ cc_library_shared {
     compile_multilib: "32",
 
 }
+
+cc_library_shared {
+
+    srcs: ["atomic.cpp"],
+
+    name: "libshim_atomic",
+
+}
