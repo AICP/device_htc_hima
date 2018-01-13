@@ -50,3 +50,9 @@ extern "C" void _ZN7android11BufferQueue17createBufferQueueEPNS_2spINS_22IGraphi
   _ZN7android11BufferQueue17createBufferQueueEPNS_2spINS_22IGraphicBufferProducerEEEPNS1_INS_22IGraphicBufferConsumerEEEb(
       outProducer, outConsumer, false);
 }
+
+extern "C" void _ZN7android18BufferItemConsumerC1ENS_2spINS_22IGraphicBufferConsumerEEEjib(
+    uint32_t consumer, uint32_t consumerUsage, int bufferCount, bool controlledByApp) {
+  _ZN7android18BufferItemConsumerC1ENS_2spINS_22IGraphicBufferConsumerEEEjib(
+      consumer, consumerUsage, bufferCount, false);
+}
