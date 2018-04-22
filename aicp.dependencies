@@ -1,26 +1,26 @@
 [
   {
-    "repository": "Flyhalf205/android_kernel_htc_msm8994",
+    "repository": "AICP/kernel_htc_msm8994",
     "target_path": "kernel/htc/msm8994",
-    "branch":      "lineage-15.1"
+    "branch":      "o8.1"
   },
   {
     "repository": "LineageOS/android_device_qcom_common",
     "target_path": "device/qcom/common",
-    "branch":      "staging/lineage-15.1"
+    "branch":      "lineage-15.1"
   },
   {
     "repository": "LineageOS/android_packages_resources_devicesettings",
     "target_path": "packages/resources/devicesettings",
-    "branch":      "staging/lineage-15.1"
+    "branch":      "lineage-15.1"
   },
   {
-    "repository": "Flyhalf205/proprietary_vendor_htc",
+    "repository": "Claymore1297/proprietary_vendor_htc",
     "target_path": "vendor/htc",
     "branch":      "lineage-15.1"
   },
   {
-    "repository": "Flyhalf205/android_packages_apps_FlipFlap",
+    "repository": "LineageOS/android_packages_apps_FlipFlap",
     "target_path": "packages/apps/FlipFlap",
     "branch":      "lineage-15.1"
    }
