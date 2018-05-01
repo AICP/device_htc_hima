@@ -1,2 +1,2 @@
-allow cameraserver qcom_blob:unix_dgram_socket sendto;
 allow cameraserver debugfs_heaps_system:file r_file_perms;
+allow cameraserver mm-qcamera-daemon:unix_dgram_socket sendto;
