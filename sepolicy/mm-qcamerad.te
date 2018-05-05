@@ -11,7 +11,6 @@ allow mm-qcamera-daemon camera_prop:file {open read getattr};
 allow mm-qcamera-daemon ion_device:chr_file {ioctl read open};
 allow mm-qcamera-daemon sysfs:file {open read getattr};
 allow mm-qcamera-daemon init:unix_stream_socket connectto;
-allow mm-qcamera-daemon cameraserver:fd {use};
 allow mm-qcamera-daemon mediaserver:fd {use};
 allow mm-qcamera-daemon property_socket:sock_file {write};
 allow mm-qcamera-daemon camera_data_file:sock_file {unlink create};
