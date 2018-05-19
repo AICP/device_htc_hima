@@ -343,11 +343,6 @@
          config to 7. -->
     <integer name="config_deviceHardwareKeys">64</integer>
 
-    <!-- Enable night mode -->
-    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
-         in hardware. -->
-    <bool name="config_setColorTransformAccelerated">true</bool>
-
     <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
     <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
 
