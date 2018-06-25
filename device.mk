@@ -22,8 +22,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_l_mr1.mk
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
-# System properties
--include $(LOCAL_PATH)/system_prop.mk
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
