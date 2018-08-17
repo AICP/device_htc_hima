@@ -349,6 +349,12 @@ service vendor.cir_fw_update /vendor/bin/cir_fw_update -u cir.img
     group system
     oneshot
 
+service imscmservice /system/vendor/bin/imscmservice
+    class main
+    user system
+    group radio net_raw oem_2950 log
+    writepid /dev/cpuset/system-background/tasks
+
 service vendor.ipacm /vendor/bin/ipacm
     class main
     user net_admin
