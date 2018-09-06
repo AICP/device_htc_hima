@@ -98,3 +98,8 @@ extern "C" status_t _ZN7android14SurfaceControl8setLayerEj(uint32_t layer) {
   return _ZN7android14SurfaceControl8setLayerEi(layer);
 }
 */
+
+// android::Fence::~Fence()
+extern "C" void _ZN7android5FenceD1Ev() {
+  // no-op, the explicit destructor was replaced with = default;
+}
