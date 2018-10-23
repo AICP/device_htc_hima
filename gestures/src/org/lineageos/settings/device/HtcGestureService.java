@@ -41,8 +41,6 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
 
-import lineageos.providers.LineageSettings;
-
 public class HtcGestureService extends Service {
 
     private static final boolean DEBUG = false;
@@ -237,8 +235,8 @@ public class HtcGestureService extends Service {
         }
 
         if (mAudioManager.getRingerMode() != AudioManager.RINGER_MODE_SILENT) {
-            final boolean enabled = LineageSettings.System.getInt(mContext.getContentResolver(),
-                    LineageSettings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0;
+            final boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0;
             if (enabled) {
                 mVibrator.vibrate(100);
             }
