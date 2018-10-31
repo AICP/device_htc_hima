@@ -467,10 +467,17 @@ service time_daemon /system/vendor/bin/time_daemon
    writepid /dev/cpuset/system-background/tasks
 
 service ppd /system/vendor/bin/mm-pp-daemon
-    class hal
+    class late_start
+    disabled
     user system
     socket pps stream 0660 system system
     group system graphics
+
+on property:init.svc.surfaceflinger=stopped
+    stop ppd
+
+on property:init.svc.surfaceflinger=running
+    start ppd
 
 # WPA
 service wpa_supplicant /system/vendor/bin/hw/wpa_supplicant \
