@@ -142,7 +142,6 @@ PRODUCT_PACKAGES += \
     gralloc.msm8994 \
     hwcomposer.msm8994 \
     memtrack.msm8994 \
-    liboverlay \
     libtinyxml
 
 # DRM
