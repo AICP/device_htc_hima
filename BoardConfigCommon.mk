@@ -113,6 +113,9 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 
+# Encryption
+TARGET_HW_DISK_ENCRYPTION := true
+
 # Extended filesystem support
 TARGET_EXFAT_DRIVER := sdfat
 
