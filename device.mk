@@ -156,6 +156,12 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     libshim_drm
 
+# FM Radio
+PRODUCT_PACKAGES += \
+    FM2 \
+    libqcomfm_jni \
+    qcom.fmradio
+
 # Gesture Handler
 PRODUCT_PACKAGES += \
     GestureHandler
