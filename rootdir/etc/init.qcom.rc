@@ -108,6 +108,9 @@ on post-fs-data
     # Create directory for TZ
     mkdir /data/misc/qsee 0770 system system
 
+    #SSD_RIL: checklist item
+    mkdir /dev/radio 0770 radio radio
+
     setprop vold.post_fs_data_done 1
 
 on early-boot
