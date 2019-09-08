@@ -1,7 +1,7 @@
-allow servicemanager pm-service:dir search;
-allow servicemanager pm-service:file {open read};
-allow servicemanager pm-service:process getattr;
-allow servicemanager pm-proxy:dir search;
-allow servicemanager pm-proxy:file {open read};
-allow servicemanager pm-proxy:process getattr;
+#allow servicemanager pm-service:dir search;
+#allow servicemanager pm-service:file {open read};
+#allow servicemanager pm-service:process getattr;
+#allow servicemanager pm-proxy:dir search;
+#allow servicemanager pm-proxy:file {open read};
+#allow servicemanager pm-proxy:process getattr;
 
