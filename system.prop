@@ -51,6 +51,20 @@ ro.sf.lcd_density=420
 # Factory Reset Protection
 ro.frp.pst=/dev/block/platform/soc.0/f9824900.sdhci/by-name/frp
 
+# default fingerprint
+ro.build.description=4.28.401.3 CL869604 release-keys
+ro.build.fingerprint=htc/himauhl_htc_europe/htc_himauhl:7.0/NRD90M/869604.3:user/release-keys
+ro.vendor.build.fingerprint=htc/himauhl_htc_europe/htc_himauhl:7.0/NRD90M/869604.3:user/release-keys
+ro.build.changelist=869604
+ro.build.product=htc_himauhl
+ro.build.sense.version=8.0
+ro.product.device=htc_himauhl
+ro.vendor.product.device=htc_himauhl
+ro.product.model=HTC One M9
+ro.vendor.product.model=HTC One M9
+ro.product.name=himauhl_htc_europe
+ro.vendor.product.name=himauhl_htc_europe
+
 # GPS
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.services.location
