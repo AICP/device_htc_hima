@@ -1,0 +1,2 @@
+allow installd device:file r_file_perms;
+
