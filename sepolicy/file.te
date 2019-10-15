@@ -1,5 +1,8 @@
 type data_misc_calibrator_file, file_type;
 
+# configstore
+type hal_configstore_hima, exec_type, vendor_file_type, file_type;
+
 # debugfs
 type debugfs_heaps_system, fs_type, debugfs_type;
 
@@ -16,6 +19,7 @@ type sysfs_camera_awb_cal, fs_type, sysfs_type;
 type sysfs_camera_sensor, fs_type, sysfs_type;
 type sysfs_cir, fs_type, sysfs_type;
 type sysfs_class_leds, fs_type, sysfs_type;
+type sysfs_disk_stat, fs_type, sysfs_type;
 type sysfs_gesture, fs_type, sysfs_type;
 type sysfs_power_supply, fs_type, sysfs_type;
 type sysfs_scheduler, fs_type, sysfs_type;
