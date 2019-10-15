@@ -84,6 +84,7 @@
 /vendor/bin/pm-service          u:object_r:pm-service_exec:s0
 /vendor/bin/pm-proxy            u:object_r:pm-proxy_exec:s0
 /vendor/bin/msm_irqbalance      u:object_r:msm_irqbalance_exec:s0
+/vendor/bin/mm-pp-daemon        u:object_r:mm-pp-daemon_exec:s0
 
 # Wifi
 /sys/devices/virtual/net/wlan0(/.*)?   u:object_r:sys_virtual_wifi:s0
