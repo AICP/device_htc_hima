@@ -1,0 +1,2 @@
+allow hal_power_default debugfs:file r_file_perms;
+
