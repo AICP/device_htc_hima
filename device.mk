@@ -225,8 +225,7 @@ PRODUCT_COPY_FILES += \
 
 # JamesDSPManager
 PRODUCT_PACKAGES += \
-    JamesDSPManager \
-    libjamesDSPImpulseToolbox
+    JamesDSPManager
 
 # Keymaster
 PRODUCT_PACKAGES += \
