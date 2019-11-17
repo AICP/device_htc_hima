@@ -1987,10 +1987,10 @@
 
     <path name="dmic-endfire">
         <path name="dual-mic" />
-        <ctl name="ADC1 Volume" value="12" />
-        <ctl name="ADC3 Volume" value="12" />
-        <ctl name="DEC6 Volume" value="84" />
-        <ctl name="DEC4 Volume" value="84" />
+        <ctl name="ADC1 Volume" value="0" />
+        <ctl name="ADC3 Volume" value="0" />
+        <ctl name="DEC6 Volume" value="79" />
+        <ctl name="DEC4 Volume" value="79" />
     </path>
     
     <path name="dmic-hac-endfire-sidetone">
