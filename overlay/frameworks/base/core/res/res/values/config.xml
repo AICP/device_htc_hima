@@ -400,9 +400,6 @@
     <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
     <bool name="config_swipe_up_gesture_setting_available">true</bool>
 
-    <!-- Audio panel view placement. Is left side enabled -->
-    <bool name="config_audioPanelOnLeftSide">true</bool>
-
     <!-- Check proximity sensor on wake -->
     <bool name="config_proximityCheckOnWake">true</bool>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
