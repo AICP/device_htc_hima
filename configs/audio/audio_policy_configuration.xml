@@ -123,6 +123,8 @@
             <devicePorts>
                 <!-- Output devices declaration, i.e. Sink DEVICE PORT -->
                 <devicePort tagName="Earpiece" type="AUDIO_DEVICE_OUT_EARPIECE" role="sink">
+					<profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                        samplingRates="48000" channelMasks="AUDIO_CHANNEL_IN_MONO"/>
                 </devicePort>
                 <devicePort tagName="Speaker" type="AUDIO_DEVICE_OUT_SPEAKER" role="sink">
                 </devicePort>
@@ -157,7 +159,7 @@
             <!-- route declaration, i.e. list all available sources for a given sink -->
             <routes>
                 <route type="mix" sink="Earpiece"
-                       sources="primary output,low_latency,voip_rx"/>
+                       sources="primary output,low_latency,,direct_pcm,compressed_offload,voip_rx,BT SCO Headset Mic"/>
                 <route type="mix" sink="Speaker"
                        sources="primary output,low_latency,voip_rx,direct_pcm,compressed_offload"/>
                 <route type="mix" sink="Wired Headset"
