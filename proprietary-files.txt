@@ -784,11 +784,11 @@ vendor/lib/hw/consumerir.default.so
 vendor/lib64/hw/consumerir.default.so
 
 # Keymaster
-vendor/firmware/keymaster/keymaster.b00
-vendor/firmware/keymaster/keymaster.b01
-vendor/firmware/keymaster/keymaster.b02
-vendor/firmware/keymaster/keymaster.b03
-vendor/firmware/keymaster/keymaster.mdt
+vendor/firmware/keymaster.b00
+vendor/firmware/keymaster.b01
+vendor/firmware/keymaster.b02
+vendor/firmware/keymaster.b03
+vendor/firmware/keymaster.mdt
 
 # Media
 vendor/lib/libI420colorconvert.so
