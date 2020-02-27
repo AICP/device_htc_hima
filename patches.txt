@@ -16,8 +16,5 @@
 96983/1 https://gerrit.aicp-rom.com frameworks/av
 96984/1 https://gerrit.aicp-rom.com frameworks/av
 # sepolicy
-95244/1 https://gerrit.aicp-rom.com device/qcom/sepolicy-legacy
-97197/1 https://gerrit.aicp-rom.com device/qcom/sepolicy-legacy
 97863/1 https://gerrit.aicp-rom.com device/qcom/sepolicy-legacy
-97864/1 https://gerrit.aicp-rom.com device/qcom/sepolicy-legacy
 
