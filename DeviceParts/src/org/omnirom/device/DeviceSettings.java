@@ -42,29 +42,9 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
 
-    private static final String KEY_SLIDER_MODE_TOP = "slider_mode_top";
-    private static final String KEY_SLIDER_MODE_CENTER = "slider_mode_center";
-    private static final String KEY_SLIDER_MODE_BOTTOM = "slider_mode_bottom";
-    //private static final String KEY_BUTTON_CATEGORY = "buttons_category";
-    private static final String KEY_CATEGORY_GRAPHICS = "graphics";
-
-    public static final String KEY_SRGB_SWITCH = "srgb";
-    public static final String KEY_HBM_SWITCH = "hbm";
-    public static final String KEY_PROXI_SWITCH = "proxi";
-    public static final String KEY_DCD_SWITCH = "dcd";
-    public static final String KEY_DCI_SWITCH = "dci";
-    public static final String KEY_WIDE_SWITCH = "wide";
-
-    public static final String SLIDER_DEFAULT_VALUE = "2,1,0";
-
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
     private VibratorStrengthPreference mVibratorStrength;
-    private ListPreference mSliderModeTop;
-    private ListPreference mSliderModeCenter;
-    private ListPreference mSliderModeBottom;
-    private static TwoStatePreference mHBMModeSwitch;
-    private static TwoStatePreference mDCDModeSwitch;
 
 
     @Override
@@ -76,103 +56,14 @@ public class DeviceSettings extends PreferenceFragment implements
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
         }
 
-        mSliderModeTop = (ListPreference) findPreference(KEY_SLIDER_MODE_TOP);
-        mSliderModeTop.setOnPreferenceChangeListener(this);
-        int sliderModeTop = getSliderAction(0);
-        int valueIndex = mSliderModeTop.findIndexOfValue(String.valueOf(sliderModeTop));
-        mSliderModeTop.setValueIndex(valueIndex);
-        mSliderModeTop.setSummary(mSliderModeTop.getEntries()[valueIndex]);
-
-        mSliderModeCenter = (ListPreference) findPreference(KEY_SLIDER_MODE_CENTER);
-        mSliderModeCenter.setOnPreferenceChangeListener(this);
-        int sliderModeCenter = getSliderAction(1);
-        valueIndex = mSliderModeCenter.findIndexOfValue(String.valueOf(sliderModeCenter));
-        mSliderModeCenter.setValueIndex(valueIndex);
-        mSliderModeCenter.setSummary(mSliderModeCenter.getEntries()[valueIndex]);
-
-        mSliderModeBottom = (ListPreference) findPreference(KEY_SLIDER_MODE_BOTTOM);
-        mSliderModeBottom.setOnPreferenceChangeListener(this);
-        int sliderModeBottom = getSliderAction(2);
-        valueIndex = mSliderModeBottom.findIndexOfValue(String.valueOf(sliderModeBottom));
-        mSliderModeBottom.setValueIndex(valueIndex);
-        mSliderModeBottom.setSummary(mSliderModeBottom.getEntries()[valueIndex]);
-
-        mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
-        mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
-        mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this.getContext()));
-        mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch(getContext()));
-
-        mDCDModeSwitch = (TwoStatePreference) findPreference(KEY_DCD_SWITCH);
-        mDCDModeSwitch.setEnabled(DCDModeSwitch.isSupported());
-        mDCDModeSwitch.setChecked(DCDModeSwitch.isCurrentlyEnabled(this.getContext()));
-        mDCDModeSwitch.setOnPreferenceChangeListener(new DCDModeSwitch(getContext()));
-
     }
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         return super.onPreferenceTreeClick(preference);
     }
-
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mSliderModeTop) {
-            String value = (String) newValue;
-            int sliderMode = Integer.valueOf(value);
-            setSliderAction(0, sliderMode);
-            int valueIndex = mSliderModeTop.findIndexOfValue(value);
-            mSliderModeTop.setSummary(mSliderModeTop.getEntries()[valueIndex]);
-        } else if (preference == mSliderModeCenter) {
-            String value = (String) newValue;
-            int sliderMode = Integer.valueOf(value);
-            setSliderAction(1, sliderMode);
-            int valueIndex = mSliderModeCenter.findIndexOfValue(value);
-            mSliderModeCenter.setSummary(mSliderModeCenter.getEntries()[valueIndex]);
-        } else if (preference == mSliderModeBottom) {
-            String value = (String) newValue;
-            int sliderMode = Integer.valueOf(value);
-            setSliderAction(2, sliderMode);
-            int valueIndex = mSliderModeBottom.findIndexOfValue(value);
-            mSliderModeBottom.setSummary(mSliderModeBottom.getEntries()[valueIndex]);
-        }
         return true;
-    }
-
-    private int getSliderAction(int position) {
-        String value = Settings.System.getString(getContext().getContentResolver(),
-                    Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING);
-        final String defaultValue = SLIDER_DEFAULT_VALUE;
-
-        if (value == null) {
-            value = defaultValue;
-        } else if (value.indexOf(",") == -1) {
-            value = defaultValue;
-        }
-        try {
-            String[] parts = value.split(",");
-            return Integer.valueOf(parts[position]);
-        } catch (Exception e) {
-        }
-        return 0;
-    }
-
-    private void setSliderAction(int position, int action) {
-        String value = Settings.System.getString(getContext().getContentResolver(),
-                    Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING);
-        final String defaultValue = SLIDER_DEFAULT_VALUE;
-
-        if (value == null) {
-            value = defaultValue;
-        } else if (value.indexOf(",") == -1) {
-            value = defaultValue;
-        }
-        try {
-            String[] parts = value.split(",");
-            parts[position] = String.valueOf(action);
-            String newValue = TextUtils.join(",", parts);
-            Settings.System.putString(getContext().getContentResolver(),
-                    Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING, newValue);
-        } catch (Exception e) {
-        }
     }
 }

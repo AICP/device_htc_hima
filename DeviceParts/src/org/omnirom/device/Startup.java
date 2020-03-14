@@ -40,28 +40,11 @@ public class Startup extends BroadcastReceiver {
         Utils.writeValue(file, value);
     }
 
-    private static String getGestureFile(String key) {
-        return GestureSettings.getGestureFile(key);
-    }
 
     private void maybeImportOldSettings(Context context) {
         boolean imported = Settings.System.getInt(context.getContentResolver(), "omni_device_setting_imported", 0) != 0;
         if (!imported) {
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-            boolean enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-            Settings.System.putInt(context.getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, enabled ? 1 : 0);
-
-            enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_HBM_SWITCH, false);
-            Settings.System.putInt(context.getContentResolver(), HBMModeSwitch.SETTINGS_KEY, enabled ? 1 : 0);
-
-            enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DCD_SWITCH, false);
-            Settings.System.putInt(context.getContentResolver(), DCDModeSwitch.SETTINGS_KEY, enabled ? 1 : 0);
-
-            enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-            Settings.System.putInt(context.getContentResolver(), DCIModeSwitch.SETTINGS_KEY, enabled ? 1 : 0);
-
-            enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_WIDE_SWITCH, false);
-            Settings.System.putInt(context.getContentResolver(), WideModeSwitch.SETTINGS_KEY, enabled ? 1 : 0);
 
             String vibrStrength = sharedPrefs.getString(DeviceSettings.KEY_VIBSTRENGTH, VibratorStrengthPreference.DEFAULT_VALUE); 
             Settings.System.putString(context.getContentResolver(), VibratorStrengthPreference.SETTINGS_KEY, vibrStrength);
@@ -77,95 +60,6 @@ public class Startup extends BroadcastReceiver {
     }
 
     public static void restoreAfterUserSwitch(Context context) {
-        // double swipe -> music play
-        String mapping = GestureSettings.DEVICE_GESTURE_MAPPING_0;
-        String value = Settings.System.getString(context.getContentResolver(), mapping);
-        if (TextUtils.isEmpty(value)) {
-            value = AppSelectListPreference.MUSIC_PLAY_ENTRY;
-            Settings.System.putString(context.getContentResolver(), mapping, value);
-        }
-        boolean enabled = !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_DOUBLE_SWIPE_APP), enabled);
-
-        // circle -> camera
-        mapping = GestureSettings.DEVICE_GESTURE_MAPPING_1;
-        value = Settings.System.getString(context.getContentResolver(), mapping);
-        if (TextUtils.isEmpty(value)) {
-            value = AppSelectListPreference.CAMERA_ENTRY;
-            Settings.System.putString(context.getContentResolver(), mapping, value);
-        }
-        enabled = !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_CIRCLE_APP), enabled);
-
-        // down arrow -> flashlight
-        mapping = GestureSettings.DEVICE_GESTURE_MAPPING_2;
-        value = Settings.System.getString(context.getContentResolver(), mapping);
-        if (TextUtils.isEmpty(value)) {
-            value = AppSelectListPreference.TORCH_ENTRY;
-            Settings.System.putString(context.getContentResolver(), mapping, value);
-        }
-        enabled = !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_DOWN_ARROW_APP), enabled);
-
-        // up arrow
-        value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_3);
-        enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_UP_ARROW_APP), enabled);
-
-        // left arrow -> music prev
-        mapping = GestureSettings.DEVICE_GESTURE_MAPPING_4;
-        value = Settings.System.getString(context.getContentResolver(), mapping);
-        if (TextUtils.isEmpty(value)) {
-            value = AppSelectListPreference.MUSIC_PREV_ENTRY;
-            Settings.System.putString(context.getContentResolver(), mapping, value);
-        }
-        enabled = !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_LEFT_ARROW_APP), enabled);
-
-        // right arrow -> music next
-        mapping = GestureSettings.DEVICE_GESTURE_MAPPING_5;
-        value = Settings.System.getString(context.getContentResolver(), mapping);
-        if (TextUtils.isEmpty(value)) {
-            value = AppSelectListPreference.MUSIC_NEXT_ENTRY;
-            Settings.System.putString(context.getContentResolver(), mapping, value);
-        }
-        enabled = !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_RIGHT_ARROW_APP), enabled);
-
-        // down swipe
-        value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_6);
-        enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_DOWN_SWIPE_APP), enabled);
-
-        // up swipe
-        value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_7);
-        enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_UP_SWIPE_APP), enabled);
-
-        // left swipe
-        value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_8);
-        enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_LEFT_SWIPE_APP), enabled);
-
-        // right swipe
-        value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_9);
-        enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_RIGHT_SWIPE_APP), enabled);
-
-        enabled = Settings.System.getInt(context.getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 0) != 0;
-        restore(SRGBModeSwitch.getFile(), enabled);
-
-        enabled = Settings.System.getInt(context.getContentResolver(), DCDModeSwitch.SETTINGS_KEY, 0) != 0;
-        restore(DCDModeSwitch.getFile(), enabled);
-
-        enabled = Settings.System.getInt(context.getContentResolver(), DCIModeSwitch.SETTINGS_KEY, 0) != 0;
-        restore(DCIModeSwitch.getFile(), enabled);
-
-        enabled = Settings.System.getInt(context.getContentResolver(), WideModeSwitch.SETTINGS_KEY, 0) != 0;
-        restore(WideModeSwitch.getFile(), enabled);
-
-        enabled = Settings.System.getInt(context.getContentResolver(), HBMModeSwitch.SETTINGS_KEY, 0) != 0;
-        restore(HBMModeSwitch.getFile(), enabled);
 
         VibratorStrengthPreference.restore(context);
     }
