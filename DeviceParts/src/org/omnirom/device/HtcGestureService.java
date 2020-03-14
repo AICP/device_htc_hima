@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.omnirom.device;
 
 import android.app.Service;
 import android.content.ActivityNotFoundException;
