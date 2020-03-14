@@ -14,16 +14,16 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <Preference
+	    <Preference
         android:key="gesture_category"
         android:title="@string/category_gestures_title"
         android:summary="@string/category_gestures_summary"
         android:persistent="false" >
         <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="org.omnirom.device"
-                android:targetClass="org.omnirom.device.GestureSettingsActivity" />
+                android:targetPackage="org.lineageos.settings.device"
+                android:targetClass="org.lineageos.settings.device.TouchscreenGestureSettingsActivity" />
     </Preference>
-
+    <!--	
     <Preference
         android:key="doze_category"
         android:title="@string/doze_category_title"
@@ -33,7 +33,7 @@
                 android:targetPackage="org.lineageos.settings.doze"
                 android:targetClass="org.lineageos.settings.doze.DozeSettingsActivity" />
     </Preference>
-
+-->
     <PreferenceCategory
         android:title="@string/category_vibrator">
         <org.omnirom.device.VibratorStrengthPreference
@@ -42,59 +42,5 @@
             android:summary="@string/vib_strength_summary_head"
             android:persistent="false" />
     </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/category_slider">
-        <ListPreference
-            android:key="slider_mode_top"
-            android:title="@string/slider_mode_title_top"
-            android:entries="@array/slider_key_action_entries"
-            android:entryValues="@array/slider_key_action_values"
-            android:persistent="false" />
-        <ListPreference
-            android:key="slider_mode_center"
-            android:title="@string/slider_mode_title_center"
-            android:entries="@array/slider_key_action_entries"
-            android:entryValues="@array/slider_key_action_values"
-            android:persistent="false" />
-        <ListPreference
-            android:key="slider_mode_bottom"
-            android:title="@string/slider_mode_title_bottom"
-            android:entries="@array/slider_key_action_entries"
-            android:entryValues="@array/slider_key_action_values"
-            android:persistent="false" />
-    </PreferenceCategory>
-
-<!--    <PreferenceCategory
-        android:title="@string/buttons_title"
-        android:key="buttons_category">
-        <SwitchPreference
-            android:key="swap_back_recents"
-            android:summary="@string/swap_back_recents_summary"
-            android:title="@string/swap_back_recents_title"
-            android:persistent="false" />
-    </PreferenceCategory>
--->
-    <PreferenceCategory
-        android:key="graphics"
-        android:title="@string/graphics_title">
-        <SwitchPreference
-            android:key="dcd"
-            android:summary="@string/dcd_mode_summary"
-            android:title="@string/dcd_mode_title" />
-        <SwitchPreference
-            android:key="hbm"
-            android:summary="@string/hbm_mode_summary"
-            android:title="@string/hbm_mode_title"
-            android:persistent="false" />
-        <Preference
-            android:key="panel_category"
-            android:title="@string/panel_category_title"
-            android:summary="@string/panel_category_summary"
-            android:persistent="false" >
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="org.omnirom.device"
-                    android:targetClass="org.omnirom.device.PanelSettingsActivity" />
-        </Preference>
-    </PreferenceCategory>
+ 
 </PreferenceScreen>

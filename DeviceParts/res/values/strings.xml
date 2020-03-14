@@ -14,8 +14,8 @@
      limitations under the License.
 -->
 <resources>
-    <string name="device_title">OnePlus Settings</string>
-    <string name="device_summary">Adjust OnePlus specific device settings</string>
+    <string name="device_title">HTC Settings</string>
+    <string name="device_summary">Adjust HTC specific device settings</string>
     <string name="category_gestures_title">Device gestures</string>
     <string name="category_vibrator">Vibrator</string>
     <string name="vib_strength_title_head">Strength</string>
