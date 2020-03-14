@@ -51,5 +51,20 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name="org.omnirom.device.HtcGestureService"
+            android:permission="HtcGestureService">
+        </service>
+
+        <activity
+            android:name=".TouchscreenGestureSettingsActivity"
+            android:label="@string/touchscreen_gesture_settings_title"
+            android:theme="@style/Theme.Main">
+            <intent-filter>
+                <action android:name="org.omnirom.device.GESTURE_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

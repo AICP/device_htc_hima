@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.omnirom.device;
 
 import android.content.Context;
 import android.hardware.Sensor;
