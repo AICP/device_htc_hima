@@ -57,6 +57,8 @@ public class Startup extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent bootintent) {
         maybeImportOldSettings(context);
         restoreAfterUserSwitch(context);
+        Intent serviceIntent = new Intent(context, HtcGestureService.class);
+        context.startService(serviceIntent);
     }
 
     public static void restoreAfterUserSwitch(Context context) {

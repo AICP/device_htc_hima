@@ -163,10 +163,6 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     libshim_drm
 
-# Gesture Handler
-PRODUCT_PACKAGES += \
-    GestureHandler
-
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
