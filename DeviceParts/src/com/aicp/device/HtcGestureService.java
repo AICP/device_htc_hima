@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package org.omnirom.device;
+package com.aicp.device;
 
 import android.app.Service;
 import android.content.ActivityNotFoundException;
