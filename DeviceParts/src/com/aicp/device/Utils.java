@@ -1,5 +1,6 @@
 /*
 * Copyright (C) 2013 The OmniROM Project
+* Copyright (C) 2020 The Android Ice Cold Project
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -17,6 +18,7 @@
 */
 package com.aicp.device;
 
+import android.util.Log;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -26,6 +28,7 @@ import java.io.FileReader;
 
 public class Utils {
 
+    private static final String TAG = "Utils";
     /**
      * Write a string value to the specified file.
      * @param filename      The filename
@@ -86,6 +89,20 @@ public class Utils {
         return line;
     }
 
+    /*
+     * we need this little helper method, because HTC decided in their infinite wisdom
+     * to chose this format in corresponding sysfs file:
+     * [VIB] voltage input:2500mV
+    */
+    public static String declutterVibratorValue(String HtcOutput) {
+        String declutteredValue = null;
+        String[] seperateVolts = HtcOutput.split(":", 2);
+        int declutterLength = seperateVolts[1].length();
+        declutteredValue = seperateVolts[1].substring(0,declutterLength-2);
+        Log.i(TAG,"decluttered vibrator value: "+declutteredValue);
+        return declutteredValue;
+    }
+
     public static boolean getFileValueAsBoolean(String filename, boolean defValue) {
         String fileValue = readLine(filename);
         if(fileValue!=null){
@@ -97,7 +114,7 @@ public class Utils {
     public static String getFileValue(String filename, String defValue) {
         String fileValue = readLine(filename);
         if(fileValue!=null){
-            return fileValue;
+	    return declutterVibratorValue(fileValue);
         }
         return defValue;
     }
