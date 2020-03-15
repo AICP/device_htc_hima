@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.omnirom.device;
+package com.aicp.device;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;

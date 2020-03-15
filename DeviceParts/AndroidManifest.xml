@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-    package="org.omnirom.device"
+    package="com.aicp.device"
     android:sharedUserId="android.uid.system" >
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -37,7 +37,7 @@
                 android:resource="@string/device_summary" />
         </activity>
         <activity-alias
-            android:name="org.omnirom.device.DeviceSettings"
+            android:name="com.aicp.device.DeviceSettings"
             android:exported="true"
             android:label="@string/advanced_settings"
             android:targetActivity="DeviceSettingsActivity" >
@@ -46,14 +46,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity-alias>
-        <receiver android:name="org.omnirom.device.Startup" >
+        <receiver android:name="com.aicp.device.Startup" >
             <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name="org.omnirom.device.HtcGestureService"
+            android:name="com.aicp.device.HtcGestureService"
             android:permission="HtcGestureService">
         </service>
 
@@ -62,7 +62,7 @@
             android:label="@string/touchscreen_gesture_settings_title"
             android:theme="@style/Theme.Main">
             <intent-filter>
-                <action android:name="org.omnirom.device.GESTURE_SETTINGS" />
+                <action android:name="com.aicp.device.GESTURE_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
