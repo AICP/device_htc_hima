@@ -1,5 +1,6 @@
 /*
 * Copyright (C) 2016 The OmniROM Project
+* Copyright (C) 2020 The Android Ice Cold Project
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -40,7 +41,8 @@ public class VibratorStrengthPreference extends Preference implements
     private int mMaxValue;
     private Vibrator mVibrator;
 
-    private static final String FILE_LEVEL = "/sys/class/leds/vibrator/vmax_mv_user";
+    private static final String TAG = "VibratorStrength";
+    private static final String FILE_LEVEL = "/sys/devices/virtual/timed_output/vibrator/voltage_level";
     private static final long testVibrationPattern[] = {0,250};
     public static final String SETTINGS_KEY = DeviceSettings.KEY_SETTINGS_PREFIX + DeviceSettings.KEY_VIBSTRENGTH;
     public static final String DEFAULT_VALUE = "2008";
@@ -49,9 +51,9 @@ public class VibratorStrengthPreference extends Preference implements
         super(context, attrs);
         // from drivers/platform/msm/qpnp-haptic.c
         // #define QPNP_HAP_VMAX_MIN_MV		116
-        // #define QPNP_HAP_VMAX_MAX_MV		3596
-        mMinValue = 116;
-        mMaxValue = 2088;
+        // #define QPNP_HAP_VMAX_MAX_MV		7308
+        mMinValue = 1200;
+        mMaxValue = 3200;
 
         mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         setLayoutResource(R.layout.preference_seek_bar);
@@ -73,6 +75,7 @@ public class VibratorStrengthPreference extends Preference implements
     }
 
     public static String getValue(Context context) {
+        Log.i(TAG,"reading sysfs file: "+FILE_LEVEL);
         String val = Utils.getFileValue(FILE_LEVEL, DEFAULT_VALUE);
         return val;
     }
