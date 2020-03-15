@@ -216,8 +216,7 @@ public class HtcGestureService extends Service {
     }
 
     private void launchCamera() {
-        mSensorWakeLock.acquire(SENSOR_WAKELOCK_DURATION);
-        mPowerManager.wakeUp(SystemClock.uptimeMillis());
+        wakeDisplay();
         Intent intent = new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
                 Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
