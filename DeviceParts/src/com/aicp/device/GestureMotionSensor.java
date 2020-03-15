@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.omnirom.device;
+package com.aicp.device;
 
 import android.content.Context;
 import android.hardware.Sensor;
