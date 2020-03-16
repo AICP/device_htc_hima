@@ -19,9 +19,17 @@
                   xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
         android:key="touchscreen_gesture_settings" >
 
+    <SwitchPreference
+        android:key="touchscreen_gesture_haptic_feedback"
+        android:summary="@string/off_screen_gesture_feedback_summary_head"
+        android:title="@string/off_screen_gesture_feedback_title_head"
+        android:title="@string/touchscreen_gesture_haptic_feedback"
+        android:summary="@string/touchscreen_gesture_haptic_feedback_summary"
+        android:defaultValue="true" />
+
     <PreferenceCategory
         android:key="screen_actions_key"
-        android:title="@string/gesture_display_title" >
+        android:title="@string/offscreen_gesture_title">
 
         <ListPreference
             android:key="swipe_up_action_key"
@@ -58,18 +66,6 @@
             android:dialogTitle="@string/touchscreen_swipe_right_title"
             android:entries="@array/action_entries"
             android:entryValues="@array/action_values" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="extra_settings_key"
-        android:title="@string/touchscreen_gesture_extras" >
-
-        <SwitchPreference
-            android:key="touchscreen_gesture_haptic_feedback"
-            android:title="@string/touchscreen_gesture_haptic_feedback"
-            android:summary="@string/touchscreen_gesture_haptic_feedback_summary"
-            android:defaultValue="true" />
 
     </PreferenceCategory>
 
