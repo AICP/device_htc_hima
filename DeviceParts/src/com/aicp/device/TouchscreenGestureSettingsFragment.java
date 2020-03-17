@@ -19,16 +19,35 @@ package com.aicp.device;
 
 import android.app.ActionBar;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.MenuItem;
 import androidx.preference.PreferenceFragment;
+import androidx.preference.Preference;
+import androidx.preference.TwoStatePreference;
+import static com.aicp.device.HtcGestureService.KEY_GESTURE_HAPTIC_FEEDBACK;
+import static com.aicp.device.HtcGestureService.GESTURE_HAPTIC_SETTINGS_VARIABLE_NAME;
 
 public class TouchscreenGestureSettingsFragment extends PreferenceFragment {
+
+private TwoStatePreference mOffscreenGestureFeedbackSwitch;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.gesture_panel);
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+        mOffscreenGestureFeedbackSwitch = (TwoStatePreference) findPreference(com.aicp.device.HtcGestureService.KEY_GESTURE_HAPTIC_FEEDBACK);
+        mOffscreenGestureFeedbackSwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
+                "Settings.System."+com.aicp.device.HtcGestureService.GESTURE_HAPTIC_SETTINGS_VARIABLE_NAME, 1) != 0);
+    }
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+       if (preference == mOffscreenGestureFeedbackSwitch) {
+            Settings.System.putInt(getContext().getContentResolver(),
+                    "Settings.System."+com.aicp.device.HtcGestureService.GESTURE_HAPTIC_SETTINGS_VARIABLE_NAME, mOffscreenGestureFeedbackSwitch.isChecked() ? 1 : 0);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
     }
 
     @Override
