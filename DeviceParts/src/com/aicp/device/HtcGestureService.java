@@ -40,6 +40,8 @@ import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
+import androidx.preference.TwoStatePreference;
+import com.android.internal.util.aicp.AicpVibe;
 
 public class HtcGestureService extends Service {
 
@@ -51,7 +53,9 @@ public class HtcGestureService extends Service {
     private static final String KEY_SWIPE_DOWN = "swipe_down_action_key";
     private static final String KEY_SWIPE_LEFT = "swipe_left_action_key";
     private static final String KEY_SWIPE_RIGHT = "swipe_right_action_key";
-
+    public static final String KEY_GESTURE_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";
+    public static final String GESTURE_HAPTIC_SETTINGS_VARIABLE_NAME = "OFF_GESTURE_HAPTIC_ENABLE";
+    private static final int GESTURE_HAPTIC_DURATION = "100";
     private static final int SENSOR_WAKELOCK_DURATION = 200;
 
     private static final int ACTION_NONE = 0;
@@ -243,17 +247,7 @@ public class HtcGestureService extends Service {
     }
 
     private void doHapticFeedback() {
-        if (mVibrator == null || !mVibrator.hasVibrator()) {
-            return;
-        }
-
-        if (mAudioManager.getRingerMode() != AudioManager.RINGER_MODE_SILENT) {
-            final boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0;
-            if (enabled) {
-                mVibrator.vibrate(100);
-            }
-        }
+        AicpVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext,GESTURE_HAPTIC_SETTINGS_VARIABLE_NAME,GESTURE_HAPTIC_DURATION);
     }
 
     private String getTorchCameraId() {
