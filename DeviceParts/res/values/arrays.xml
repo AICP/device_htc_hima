@@ -14,27 +14,12 @@
      limitations under the License.
 -->
 <resources>
-    <string-array name="slider_key_action_entries" translatable="false">
-        <item>@string/slider_mode_off</item>
-        <item>@string/slider_mode_vibrate</item>
-        <item>@string/slider_mode_silent</item>
-        <item>@string/slider_mode_zen</item>
-        <item>@string/slider_mode_flashlight</item>
-    </string-array>
-
-    <string-array name="slider_key_action_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
     <string-array name="action_entries" translatable="false">
-        <item>@string/action_none</item>
-        <item>@string/action_launch_camera</item>
-        <item>@string/action_torch</item>
-        <item>@string/action_wake_display</item>
+        <item>@string/disabled_entry</item>
+        <item>@string/camera_entry</item>
+        <item>@string/torch_entry</item>
+        <item>@string/wake_entry</item>
+
     </string-array>
 
     <string-array name="action_values" translatable="false">

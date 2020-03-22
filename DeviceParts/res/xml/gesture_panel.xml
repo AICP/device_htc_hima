@@ -23,6 +23,7 @@
         android:key="touchscreen_gesture_haptic_feedback"
         android:summary="@string/off_screen_gesture_feedback_summary_head"
         android:title="@string/off_screen_gesture_feedback_title_head"
+        android:icon="@drawable/ic_vibration"
         android:defaultValue="true" />
 
     <PreferenceCategory
@@ -32,36 +33,40 @@
         <ListPreference
             android:key="swipe_up_action_key"
             android:defaultValue="0"
-            android:title="@string/touchscreen_swipe_up_title"
+            android:title="@string/category_up_swipe_gesture"
+            android:icon="@drawable/ic_slider_up"
             android:summary="%s"
-            android:dialogTitle="@string/touchscreen_swipe_up_title"
+            android:dialogTitle="@string/category_up_swipe_gesture"
             android:entries="@array/action_entries"
             android:entryValues="@array/action_values" />
 
         <ListPreference
             android:key="swipe_down_action_key"
             android:defaultValue="0"
-            android:title="@string/touchscreen_swipe_down_title"
+            android:title="@string/category_down_swipe_gesture"
+            android:icon="@drawable/ic_slider_down"
             android:summary="%s"
-            android:dialogTitle="@string/touchscreen_swipe_down_title"
+            android:dialogTitle="@string/category_down_swipe_gesture"
             android:entries="@array/action_entries"
             android:entryValues="@array/action_values" />
 
         <ListPreference
             android:key="swipe_left_action_key"
             android:defaultValue="0"
-            android:title="@string/touchscreen_swipe_left_title"
+            android:title="@string/category_left_swipe_gesture"
+            android:icon="@drawable/ic_music_prev"
             android:summary="%s"
-            android:dialogTitle="@string/touchscreen_swipe_left_title"
+            android:dialogTitle="@string/category_left_swipe_gesture"
             android:entries="@array/action_entries"
             android:entryValues="@array/action_values" />
 
         <ListPreference
             android:key="swipe_right_action_key"
             android:defaultValue="0"
-            android:title="@string/touchscreen_swipe_right_title"
+            android:title="@string/category_right_swipe_gesture"
+            android:icon="@drawable/ic_music_next"
             android:summary="%s"
-            android:dialogTitle="@string/touchscreen_swipe_right_title"
+            android:dialogTitle="@string/category_right_swipe_gesture"
             android:entries="@array/action_entries"
             android:entryValues="@array/action_values" />
 

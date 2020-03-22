@@ -15,7 +15,7 @@
         android:minSdkVersion="26"
         android:targetSdkVersion="26" />
     <application
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/device_title"
         android:theme="@style/AppTheme"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -59,7 +59,7 @@
 
         <activity
             android:name=".TouchscreenGestureSettingsActivity"
-            android:label="@string/touchscreen_gesture_settings_title"
+            android:label="@string/screen_gestures_panel_title"
             android:theme="@style/Theme.Main">
             <intent-filter>
                 <action android:name="com.aicp.device.GESTURE_SETTINGS" />
