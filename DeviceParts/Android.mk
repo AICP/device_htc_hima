@@ -14,7 +14,7 @@ LOCAL_PRIVATE_PLATFORM_APIS := true
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res \
-    $(TOP)/packages/resources/devicesettings/res
+    $(TOP)/packages/resources/deviceparts/res
 
 LOCAL_USE_AAPT2 := true
 
