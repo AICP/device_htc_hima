@@ -28,6 +28,7 @@ import java.io.FileReader;
 
 public class Utils {
 
+    private static final boolean DEBUG = false;
     private static final String TAG = "Utils";
     /**
      * Write a string value to the specified file.
@@ -38,6 +39,7 @@ public class Utils {
         if (filename == null) {
             return;
         }
+        if (DEBUG) Log.d(TAG, "writeValue filename / value:"+filename+" / "+value);
         try {
             FileOutputStream fos = new FileOutputStream(new File(filename));
             fos.write(value.getBytes());
@@ -116,6 +118,7 @@ public class Utils {
         if(fileValue!=null){
 	    return declutterVibratorValue(fileValue);
         }
+        if (DEBUG) Log.d(TAG,"getFileValue file / value:"+filename+" / "+defValue);
         return defValue;
     }
 }

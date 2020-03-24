@@ -1,5 +1,6 @@
 /*
 * Copyright (C) 2013 The OmniROM Project
+* Copyright (C) 2020 The Android Ice Cold Project
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,42 +21,11 @@ package com.aicp.device;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import androidx.preference.PreferenceManager;
-import android.provider.Settings;
-import android.text.TextUtils;
 
 public class Startup extends BroadcastReceiver {
-    private static void restore(String file, boolean enabled) {
-        if (file == null) {
-            return;
-        }
-        Utils.writeValue(file, enabled ? "1" : "0");
-    }
-
-    private static void restore(String file, String value) {
-        if (file == null) {
-            return;
-        }
-        Utils.writeValue(file, value);
-    }
-
-
-    private void maybeImportOldSettings(Context context) {
-        boolean imported = Settings.System.getInt(context.getContentResolver(), "omni_device_setting_imported", 0) != 0;
-        if (!imported) {
-            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-
-            String vibrStrength = sharedPrefs.getString(DeviceSettings.KEY_VIBSTRENGTH, VibratorStrengthPreference.DEFAULT_VALUE); 
-            Settings.System.putString(context.getContentResolver(), VibratorStrengthPreference.SETTINGS_KEY, vibrStrength);
-
-            Settings.System.putInt(context.getContentResolver(), "omni_device_setting_imported", 1);
-        }
-    }
 
     @Override
     public void onReceive(final Context context, final Intent bootintent) {
-        maybeImportOldSettings(context);
         restoreAfterUserSwitch(context);
         Intent serviceIntent = new Intent(context, HtcGestureService.class);
         context.startService(serviceIntent);
