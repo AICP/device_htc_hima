@@ -1,6 +1,7 @@
 allow system_app proc_pagetypeinfo:file r_file_perms;
 allow system_app sysfs_backlight_dimmer:file rw_file_perms;
 allow system_app sysfs_fastcharger:file rw_file_perms;
+allow system_app sysfs_headphone_gain:file rw_file_perms;
 allow system_app sysfs_gesture:file rw_file_perms;
 allow system_app sysfs_sensors:dir r_dir_perms;
 allow system_app sysfs_vibeamp:file rw_file_perms;
