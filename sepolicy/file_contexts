@@ -4,6 +4,9 @@
 /dev/tfa9887                    u:object_r:audio_device:s0
 /dev/tfa9887l                   u:object_r:audio_device:s0
 
+# Fastcharge
+/sys/backlight_dimmer/backlight_min   u:object_r:sysfs_backlight_dimmer:s0
+
 # Battery
 /sys/devices/soc\.0/f9967000\.i2c/i2c-5/5-001c/power_supply/usb-parallel(/.*)?              u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc\.0/f9200000\.ssusb/power_supply/usb(/.*)?              u:object_r:sysfs_battery_supply:s0
@@ -25,6 +28,7 @@
 
 # Fastcharge
 /sys/kernel/fast_charge/force_fast_charge   u:object_r:sysfs_fastcharger:s0
+
 # CIR
 /dev/ttyHSL2                                u:object_r:cir_device:s0
 /vendor/bin/cir_fw_update                   u:object_r:cir_fw_update_exec:s0
