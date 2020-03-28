@@ -1,5 +1,8 @@
 type data_misc_calibrator_file, file_type;
 
+# charger
+type sysfs_fastcharger, sysfs_type, fs_type;
+
 # debugfs
 type debugfs_heaps_system, fs_type, debugfs_type;
 
