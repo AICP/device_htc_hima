@@ -46,5 +46,6 @@ public class Startup extends BroadcastReceiver {
 
         VibratorStrengthPreference.restore(context);
         BacklightDimmerPreference.restore(context);
+        HeadphoneGainPreference.restore(context);
     }
 }
