@@ -1,6 +1,9 @@
 type data_misc_calibrator_file, file_type;
 
 # charger
+type sysfs_backlight_dimmer, sysfs_type, fs_type;
+
+# charger
 type sysfs_fastcharger, sysfs_type, fs_type;
 
 # debugfs
