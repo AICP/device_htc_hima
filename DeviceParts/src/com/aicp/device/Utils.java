@@ -115,6 +115,15 @@ public class Utils {
 
     public static String getFileValue(String filename, String defValue) {
         String fileValue = readLine(filename);
+        if (DEBUG) Log.d(TAG,"getFileValue file / value:"+filename+" / "+defValue);
+        if(fileValue!=null){
+	    return defValue;
+        }
+        return null;
+    }
+
+    public static String getFileValueVibrator(String filename, String defValue) {
+        String fileValue = readLine(filename);
         if(fileValue!=null){
 	    return declutterVibratorValue(fileValue);
         }
