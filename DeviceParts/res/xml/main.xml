@@ -42,6 +42,16 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/category_audio">
+        <com.aicp.device.HeadphoneGainPreference
+            android:key="headphone_gain"
+            android:title="@string/headphone_gain_title"
+            android:icon="@drawable/ic_hp_gain"
+            android:summary="@string/headphone_gain_summary"
+            android:persistent="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/category_vibrator">
         <com.aicp.device.VibratorStrengthPreference
             android:key="vib_strength"
