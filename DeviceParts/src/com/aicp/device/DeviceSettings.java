@@ -20,16 +20,17 @@ package com.aicp.device;
 import android.os.Bundle;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.Preference;
+import androidx.preference.TwoStatePreference;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
-
+    public static final String KEY_FASTCHARGE = "fastcharge";
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
     private VibratorStrengthPreference mVibratorStrength;
-
+    private static TwoStatePreference mFastChargeSwitch;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -40,6 +41,10 @@ public class DeviceSettings extends PreferenceFragment implements
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
         }
 
+        mFastChargeSwitch = (TwoStatePreference) findPreference(KEY_FASTCHARGE);
+        mFastChargeSwitch.setEnabled(FastChargeSwitch.isSupported());
+        mFastChargeSwitch.setChecked(FastChargeSwitch.isCurrentlyEnabled(this.getContext()));
+        mFastChargeSwitch.setOnPreferenceChangeListener(new FastChargeSwitch(getContext()));
     }
 
     @Override
