@@ -323,6 +323,10 @@ on boot
     chown system system /sys/class/timed_output/vibrator/voltage_level
     chmod 0664 /sys/class/timed_output/vibrator/voltage_level
 
+    # backlight dimmer
+    chown system system /sys/backlight_dimmer/backlight_min
+    chmod 0666 /sys/backlight_dimmer/backlight_min
+
 # Services start here
 
 service vendor.adsprpcd /vendor/bin/adsprpcd

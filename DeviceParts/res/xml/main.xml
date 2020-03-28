@@ -32,6 +32,16 @@
         android:defaultValue="true"/>
 
     <PreferenceCategory
+        android:title="@string/category_backlight_dimmer">
+        <com.aicp.device.BacklightDimmerPreference
+            android:key="backlight_dimmer"
+            android:title="@string/backlight_dimmer_title"
+            android:icon="@drawable/ic_dc"
+            android:summary="@string/backlight_dimmer_summary"
+            android:persistent="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/category_vibrator">
         <com.aicp.device.VibratorStrengthPreference
             android:key="vib_strength"
