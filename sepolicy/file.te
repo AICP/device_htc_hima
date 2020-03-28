@@ -9,6 +9,9 @@ type sysfs_fastcharger, sysfs_type, fs_type;
 # debugfs
 type debugfs_heaps_system, fs_type, debugfs_type;
 
+# headphone gain
+type sysfs_headphone_gain, sysfs_type, fs_type;
+
 # procfs
 type proc_kernel_sched, fs_type, proc_type;
 type proc_swap, fs_type, proc_type;
