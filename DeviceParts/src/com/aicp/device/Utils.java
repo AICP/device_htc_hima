@@ -53,6 +53,29 @@ public class Utils {
     }
 
     /**
+     * Write a string value to the specified file.
+     * @param filename      The filename
+     * @param value         The value
+     */
+    public static void writeValueHP(String filename, String value) {
+        if (filename == null) {
+            return;
+        }
+	String HPvalue = value+" "+value;
+        if (DEBUG) Log.d(TAG, "writeValue filename / value:"+filename+" / "+HPvalue);
+        try {
+            FileOutputStream fos = new FileOutputStream(new File(filename));
+            fos.write(HPvalue.getBytes());
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Check if the specified file exists.
      * @param filename      The filename
      * @return              Whether the file exists or not
@@ -105,6 +128,26 @@ public class Utils {
         return declutteredValue;
     }
 
+    /*
+     * we need this little helper method, because api offeres us values for left and right.
+     * We want to handle both values equal, so only read left value.
+     * Format in sysfs file is:
+     * 1 1
+     * BUT... for some reasons, when writing in the file a -1, the value in the file is 255,
+     * -2 is 254, so we have here to do some maths...
+    */
+    public static String declutterHPValue(String HtcOutput) {
+        String[] seperateHP = HtcOutput.split(" ", 2);
+        String declutteredValue = seperateHP[0];
+        if (Integer.parseInt(declutteredValue) > 20) {
+            // The chosen variablename is like the thing it does ;-) ...
+            int declutteredandConvertedValue = Integer.parseInt(declutteredValue) - 256;
+            declutteredValue = String.valueOf(declutteredandConvertedValue);
+        }
+        Log.i(TAG,"decluttered headphone value: "+declutteredValue);
+        return declutteredValue;
+    }
+
     public static boolean getFileValueAsBoolean(String filename, boolean defValue) {
         String fileValue = readLine(filename);
         if(fileValue!=null){
@@ -129,6 +172,16 @@ public class Utils {
 	    return declutterVibratorValue(fileValue);
         }
         if (DEBUG) Log.d(TAG,"getFileValue file / value:"+filename+" / "+defValue);
+        return defValue;
+    }
+
+    public static String getFileValueHP(String filename, String defValue) {
+        String fileValue = readLine(filename);
+        if (DEBUG) Log.d(TAG,"getFileValue file / value:"+filename+" / "+fileValue);
+        if(fileValue!=null){
+	    return declutterHPValue(fileValue);
+        }
+        if (DEBUG) Log.e(TAG,"getFileValue file / value:"+filename+" / "+defValue);
         return defValue;
     }
 }
