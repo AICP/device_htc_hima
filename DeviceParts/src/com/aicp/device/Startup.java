@@ -45,6 +45,7 @@ public class Startup extends BroadcastReceiver {
         restore(FastChargeSwitch.getFile(), enabled);
 
         VibratorStrengthPreference.restore(context);
-	BacklightDimmerPreference.restore(context);
+        BacklightDimmerPreference.restore(context);
+        HeadphoneGainPreference.restore(context);
     }
 }
