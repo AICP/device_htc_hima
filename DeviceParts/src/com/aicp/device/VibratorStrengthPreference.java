@@ -77,7 +77,7 @@ public class VibratorStrengthPreference extends Preference implements
 
     public static String getValue(Context context) {
         Log.i(TAG,"reading sysfs file: "+FILE_LEVEL);
-        String val = Utils.getFileValue(FILE_LEVEL, DEFAULT_VALUE);
+        String val = Utils.getFileValueVibrator(FILE_LEVEL, DEFAULT_VALUE);
         return val;
     }
 
