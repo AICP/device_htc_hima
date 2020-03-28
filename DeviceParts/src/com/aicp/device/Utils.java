@@ -30,6 +30,7 @@ public class Utils {
 
     private static final boolean DEBUG = false;
     private static final String TAG = "Utils";
+
     /**
      * Write a string value to the specified file.
      * @param filename      The filename
@@ -44,6 +45,28 @@ public class Utils {
             FileOutputStream fos = new FileOutputStream(new File(filename));
             fos.write(value.getBytes());
             fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Write a string value to the specified sysfs file.
+     * @param filename      The filename
+     * @param value         The value
+     */
+    public static void writeValueiSimple(String filename, String value) {
+        if (filename == null) {
+            return;
+        }
+        if (DEBUG) Log.d(TAG, "writeValueSimple filename / value:"+filename+" / "+value);
+        try {
+            FileOutputStream fos = new FileOutputStream(new File(filename));
+            String valueSimple = value + "\n";
+            fos.write(valueSimple.getBytes());
             fos.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
