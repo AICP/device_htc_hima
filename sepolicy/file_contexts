@@ -23,6 +23,8 @@
 /sys/android_camera2/sensor                 u:object_r:sysfs_camera_sensor:s0
 /system/bin/cameraserver_hima               u:object_r:cameraserver_exec:s0
 
+# Fastcharge
+/sys/kernel/fast_charge/force_fast_charge   u:object_r:sysfs_fastcharger:s0
 # CIR
 /dev/ttyHSL2                                u:object_r:cir_device:s0
 /vendor/bin/cir_fw_update                   u:object_r:cir_fw_update_exec:s0
