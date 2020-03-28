@@ -24,6 +24,13 @@ import android.content.Intent;
 
 public class Startup extends BroadcastReceiver {
 
+    private static void restore(String file, boolean enabled) {
+        if (file == null) {
+            return;
+        }
+        Utils.writeValue(file, enabled ? "1" : "0");
+    }
+
     @Override
     public void onReceive(final Context context, final Intent bootintent) {
         restoreAfterUserSwitch(context);
@@ -32,6 +39,9 @@ public class Startup extends BroadcastReceiver {
     }
 
     public static void restoreAfterUserSwitch(Context context) {
+
+        enabled = Settings.System.getInt(context.getContentResolver(), FastChargeSwitch.SETTINGS_KEY, 0) != 0;
+        restore(FastChargeSwitch.getFile(), enabled);
 
         VibratorStrengthPreference.restore(context);
     }
