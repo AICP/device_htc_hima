@@ -24,6 +24,11 @@
                 android:targetPackage="com.aicp.device"
                 android:targetClass="com.aicp.device.TouchscreenGestureSettingsActivity" />
     </Preference>
+    <SwitchPreference
+        android:key="fastcharge"
+        android:summary="@string/fastcharge_summary"
+        android:title="@string/fastcharge_title"
+        android:icon="@drawable/ic_fastcharge" />
 
     <PreferenceCategory
         android:title="@string/category_vibrator">
@@ -34,5 +39,5 @@
             android:summary="@string/vib_strength_summary"
             android:persistent="false" />
     </PreferenceCategory>
- 
+
 </PreferenceScreen>
