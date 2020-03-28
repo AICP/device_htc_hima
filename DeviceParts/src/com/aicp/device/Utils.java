@@ -138,6 +138,16 @@ public class Utils {
 
     public static String getFileValue(String filename, String defValue) {
         String fileValue = readLine(filename);
+        if (DEBUG) Log.d(TAG,"getFileValue file / value:"+filename+" / "+fileValue);
+        if(fileValue!=null){
+	    return fileValue;
+        }
+        if (DEBUG) Log.e(TAG,"getFileValue file / value:"+filename+" / "+defValue);
+        return defValue;
+    }
+
+    public static String getFileValueVibrator(String filename, String defValue) {
+        String fileValue = readLine(filename);
         if(fileValue!=null){
 	    return declutterVibratorValue(fileValue);
         }
