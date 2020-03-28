@@ -42,7 +42,6 @@ public class HeadphoneGainPreference extends Preference implements
     private static final boolean DEBUG = false;
     private static final String TAG = "BacklightDimmerPreference";
     private static final String FILE_LEVEL = "/sys/kernel/sound_control/headphone_gain";
-    private static final long testVibrationPattern[] = {0,250};
     public static final String SETTINGS_KEY = DeviceSettings.KEY_SETTINGS_PREFIX + DeviceSettings.KEY_HEADPHONE_GAIN;
     public static final String DEFAULT_VALUE = "5";
 
@@ -72,12 +71,12 @@ public class HeadphoneGainPreference extends Preference implements
 
     public static String getValue(Context context) {
         Log.i(TAG,"reading sysfs file: "+FILE_LEVEL);
-        String val = Utils.getFileValue(FILE_LEVEL, DEFAULT_VALUE);
+        String val = Utils.getFileValueHP(FILE_LEVEL, DEFAULT_VALUE);
         return val;
     }
 
-    private void setValue(String newValue, boolean withFeedback) {
-        Utils.writeValue(FILE_LEVEL, newValue);
+    private void setValue(String newValue) {
+        Utils.writeValueHP(FILE_LEVEL, newValue);
         Settings.System.putString(getContext().getContentResolver(), SETTINGS_KEY, newValue);
     }
 
@@ -96,7 +95,7 @@ public class HeadphoneGainPreference extends Preference implements
 
     public void onProgressChanged(SeekBar seekBar, int progress,
             boolean fromTouch) {
-        setValue(String.valueOf(progress + mMinValue), true);
+        setValue(String.valueOf(progress + mMinValue));
     }
 
     public void onStartTrackingTouch(SeekBar seekBar) {
