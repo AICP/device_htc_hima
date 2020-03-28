@@ -29,6 +29,9 @@
 # Fastcharge
 /sys/kernel/fast_charge/force_fast_charge   u:object_r:sysfs_fastcharger:s0
 
+# Headphone gain
+/sys/kernel/sound_control/headphone_gain    u:object_r:sysfs_headphone_gain:s0
+
 # CIR
 /dev/ttyHSL2                                u:object_r:cir_device:s0
 /vendor/bin/cir_fw_update                   u:object_r:cir_fw_update_exec:s0
