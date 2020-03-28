@@ -27,6 +27,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
     public static final String KEY_FASTCHARGE = "fastcharge";
+    public static final String KEY_BACKLIGHT_DIMMER = "backlight_dimmer";
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
     private VibratorStrengthPreference mVibratorStrength;
