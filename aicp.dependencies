@@ -1,22 +1,18 @@
 [
   {
     "repository": "AICP/kernel_htc_msm8994",
-    "target_path": "kernel/htc/msm8994",
-    "branch":      "q10.0"
+    "target_path": "kernel/htc/msm8994"
   },
   {
     "repository": "AICP/proprietary_vendor_htc",
-    "target_path": "vendor/htc",
-    "branch":      "q10.0"
+    "target_path": "vendor/htc"
   },
   {
     "repository": "AICP/packages_apps_FlipFlap",
-    "target_path": "packages/apps/FlipFlap",
-    "branch":      "q10.0"
+    "target_path": "packages/apps/FlipFlap"
    },
   {
     "repository":  "Claymore1297/packages_resources_deviceparts",
-    "target_path": "packages/resources/deviceparts",
-    "branch":      "q10.0"
+    "target_path": "packages/resources/deviceparts"
   }
 ]
