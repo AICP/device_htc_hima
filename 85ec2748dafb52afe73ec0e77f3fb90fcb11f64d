@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d0da61a4_c2548d82",
+        "filename": "aicp.dependencies",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 774
+      },
+      "writtenOn": "2020-04-05T20:21:29Z",
+      "side": 1,
+      "message": "smite",
+      "range": {
+        "startLine": 4,
+        "startChar": 39,
+        "endLine": 4,
+        "endChar": 40
+      },
+      "revId": "85ec2748dafb52afe73ec0e77f3fb90fcb11f64d",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a772b04_160f2917",
+        "filename": "aicp.dependencies",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 774
+      },
+      "writtenOn": "2020-04-05T20:21:29Z",
+      "side": 1,
+      "message": "decapitate",
+      "range": {
+        "startLine": 8,
+        "startChar": 31,
+        "endLine": 8,
+        "endChar": 32
+      },
+      "revId": "85ec2748dafb52afe73ec0e77f3fb90fcb11f64d",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f34d033a_eb05390f",
+        "filename": "aicp.dependencies",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 774
+      },
+      "writtenOn": "2020-04-05T20:21:29Z",
+      "side": 1,
+      "message": "nuke",
+      "range": {
+        "startLine": 12,
+        "startChar": 43,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "85ec2748dafb52afe73ec0e77f3fb90fcb11f64d",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ca9b06a_73191840",
+        "filename": "aicp.dependencies",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 774
+      },
+      "writtenOn": "2020-04-05T20:21:29Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 16,
+        "startChar": 51,
+        "endLine": 16,
+        "endChar": 52
+      },
+      "revId": "85ec2748dafb52afe73ec0e77f3fb90fcb11f64d",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": true
+    }
+  ]
+}
