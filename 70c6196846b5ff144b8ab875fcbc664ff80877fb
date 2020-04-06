@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "53a22fd2_124a64ea",
+        "filename": "aicp.dependencies",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2020-04-06T05:36:58Z",
+      "side": 1,
+      "message": "Why that ???\n\nUse https://github.com/AICP/packages_resources_deviceparts instead.",
+      "range": {
+        "startLine": 15,
+        "startChar": 19,
+        "endLine": 15,
+        "endChar": 32
+      },
+      "revId": "70c6196846b5ff144b8ab875fcbc664ff80877fb",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": true
+    }
+  ]
+}
