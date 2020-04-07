@@ -76,7 +76,7 @@ limitations under the License
             android:layout_height="wrap_content"
             android:minHeight="?android:attr/listPreferredItemHeight"
             android:gravity="center_vertical"
-            android:text="@string/Wide_mode_title"
+            android:text="@string/wide_mode_title"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </RadioGroup>
