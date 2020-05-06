@@ -15,6 +15,4 @@
 96982/1 https://gerrit.aicp-rom.com frameworks/av
 96983/1 https://gerrit.aicp-rom.com frameworks/av
 96984/1 https://gerrit.aicp-rom.com frameworks/av
-#verizon ril fix
-99901/1 https://gerrit.aicp-rom.com frameworks/base
 
