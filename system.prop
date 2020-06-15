@@ -22,6 +22,7 @@ persist.vendor.audio.spkr.cal.duration=10
 persist.vendor.audio.speaker.prot.enable=true
 audio.deep_buffer.media=true
 
+ro.no.qti.carrier.config.helper=true
 # Media
 ro.config.media_vol_steps=100
 ro.config.vc_call_vol_steps=7
