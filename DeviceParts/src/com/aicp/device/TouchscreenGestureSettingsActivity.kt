@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
  *               2017 The LineageOS Project
+ *               2020 Android Ice Cold Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.aicp.device
 
-package com.aicp.device;
+import android.os.Bundle
+import android.preference.PreferenceActivity
 
-import android.os.Bundle;
-import android.preference.PreferenceActivity;
-
-public class TouchscreenGestureSettingsActivity extends PreferenceActivity {
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+class TouchscreenGestureSettingsActivity : PreferenceActivity() {
+    override protected fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         getFragmentManager().beginTransaction().replace(android.R.id.content,
-                new TouchscreenGestureSettingsFragment()).commit();
+                TouchscreenGestureSettingsFragment()).commit()
     }
 }
