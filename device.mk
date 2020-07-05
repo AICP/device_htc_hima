@@ -135,7 +135,7 @@ PRODUCT_PACKAGES += \
 
 # DeviceParts
 PRODUCT_PACKAGES += \
-    DeviceParts
+    DeviceParts_hima
 
 # Display
 PRODUCT_PACKAGES += \
