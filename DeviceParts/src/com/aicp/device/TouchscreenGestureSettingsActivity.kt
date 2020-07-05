@@ -14,18 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.aicp.device
 
-package com.aicp.device;
+import android.os.Bundle
+import android.preference.PreferenceActivity
 
-import android.os.Bundle;
-import android.preference.PreferenceActivity;
-
-public class TouchscreenGestureSettingsActivity extends PreferenceActivity {
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+class TouchscreenGestureSettingsActivity : PreferenceActivity() {
+    protected fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         getFragmentManager().beginTransaction().replace(android.R.id.content,
-                new TouchscreenGestureSettingsFragment()).commit();
+                TouchscreenGestureSettingsFragment()).commit()
     }
 }
