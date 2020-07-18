@@ -23,7 +23,7 @@ android_app {
     privileged: true,
     certificate: "platform",
 
-    srcs: ["src/**/*.kt","src/**/*.java"],
+    srcs: ["src/**/*.kt"],
 
     static_libs: [
         "androidx.core_core",
