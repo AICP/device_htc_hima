@@ -82,12 +82,11 @@ class HeadphoneGainPreference(context: Context?, attrs: AttributeSet?) : Prefere
             if (!isSupported) {
                 return
             }
-            var storedValue: String = Settings.System.getString(context.getContentResolver(), SETTINGS_KEY)
-            if (DEBUG) Log.d(TAG, "restore value:$storedValue")
-            if (storedValue == null) {
-                storedValue = DEFAULT_VALUE
+            var storedValue: String = Settings.System.getString(context.getContentResolver(), SETTINGS_KEY)?: DEFAULT_VALUE
+            if (DEBUG) {
+                Log.d(TAG, "restore value:$storedValue")
+                Log.d(TAG, "restore file:$FILE_LEVEL")
             }
-            if (DEBUG) Log.d(TAG, "restore file:$FILE_LEVEL")
             Utils.writeValueDual(FILE_LEVEL, storedValue)
         }
     }
