@@ -22,7 +22,6 @@ android_app {
     platform_apis: true,
     privileged: true,
     certificate: "platform",
-    product_specific: true,
 
     srcs: ["src/**/*.kt","src/**/*.java"],
 
