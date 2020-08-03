@@ -404,9 +404,6 @@
     <!-- Default state for LiveDisplay -->
     <bool name="config_liveDisplayAvailable">true</bool>
 
-    <!-- True if the firmware supports Wi-Fi link probing -->
-    <bool name="config_wifi_link_probing_supported">true</bool>
-
     <!-- System info -->
     <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone7/temp</string>
     <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string>
