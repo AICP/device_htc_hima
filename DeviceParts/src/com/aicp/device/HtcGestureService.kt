@@ -61,7 +61,7 @@ class HtcGestureService : Service() {
                 "Received event: $type"
             )
             when (type) {
-                GestureMotionSensor.SENSOR_GESTURE_DOUBLE_TAP -> mPowerManager!!.wakeUp(SystemClock.uptimeMillis())
+                GestureMotionSensor.SENSOR_GESTURE_DOUBLE_TAP -> doDoubleTapToWake()
                 GestureMotionSensor.SENSOR_GESTURE_SWIPE_UP, GestureMotionSensor.SENSOR_GESTURE_SWIPE_DOWN, GestureMotionSensor.SENSOR_GESTURE_SWIPE_LEFT, GestureMotionSensor.SENSOR_GESTURE_SWIPE_RIGHT -> handleGestureAction(
                     gestureToAction(type)
                 )
@@ -186,6 +186,11 @@ class HtcGestureService : Service() {
             else -> {
             }
         }
+    }
+
+    private fun doDoubleTapToWake() {
+        doHapticFeedback()
+        mPowerManager!!.wakeUp(SystemClock.uptimeMillis())
     }
 
     private fun handleCameraActivation() {
