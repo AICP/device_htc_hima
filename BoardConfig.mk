@@ -201,6 +201,9 @@ TARGET_USE_SDCLANG := true
 # Security Patch Level
 VENDOR_SECURITY_PATCH := 2017-04-01
 
+# WFD
+TARGET_USES_LEGACY_WFD := true
+
 # Wifi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 BOARD_WLAN_DEVICE           := bcmdhd
