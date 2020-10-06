@@ -119,7 +119,7 @@ extern "C" void _ZN7android21SurfaceComposerClient17setDisplaySurfaceERKNS_2spIN
 
 extern "C" void _ZN7android21SurfaceComposerClient20setDisplayProjectionERKNS_2spINS_7IBinderEEEjRKNS_4RectES8_(
     const sp<IBinder>& token,
-    uint32_t orientation,
+    android::ui::Rotation orientation,
     const android::Rect& layerStackRect,
     const android::Rect& displayRect) {
   t->setDisplayProjection(token, orientation, layerStackRect, displayRect);
