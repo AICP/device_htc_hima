@@ -88,15 +88,16 @@ extern "C" void* _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8
     android::LayerMetadata metadata
 );
 
-
+/*
 extern "C" void* _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8Ejjij(
     const android::String8& name, uint32_t w, uint32_t h, PixelFormat format,
     uint32_t flags) {
   android::LayerMetadata metadata;
-  sc = _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlENS_13LayerMetadataE(name, w, h, format, flags, nullptr, metadata);
+  uint32_t* outTransformHint;
+  sc = _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlENS_13LayerMetadataE(name, w, h, format, flags, outTransformHint, metadata);
   return sc;
 }
-
+*/
 // status_t setLayer(uint32_t layer);
 extern "C" status_t _ZN7android14SurfaceControl8setLayerEj(uint32_t layer) {
   t->setLayer((SurfaceControl*)sc, layer);
@@ -156,9 +157,9 @@ extern "C" void* _ZN7android21SurfaceComposerClient17getBuiltInDisplayEi(int32_t
 
 extern "C" void _ZN7android14SurfaceControl7destroyEv(void);
 
-extern "C" void _ZN7android14SurfaceControl5clearEv(void){
+/*extern "C" void _ZN7android14SurfaceControl5clearEv(void){
   _ZN7android14SurfaceControl7destroyEv();
-}
+}*/
 
 //android::GraphicBuffer::lock(uint32_t inUsage, void** vaddr, int32_t* outBytesPerPixel,
 //                             int32_t* outBytesPerStride);
