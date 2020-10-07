@@ -164,8 +164,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl.legacy \
-    android.hardware.gnss@1.0-service.legacy \
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service \
     libshim_gps_hima \
     gps.msm8994 \
     flp.conf \
@@ -228,8 +228,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # JamesDSPManager
-PRODUCT_PACKAGES += \
-    JamesDSPManager
+#PRODUCT_PACKAGES += \
+#    JamesDSPManager
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -242,8 +242,8 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.hima
 
 # LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-legacymm
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.livedisplay@2.0-service-legacymm
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -307,10 +307,10 @@ PRODUCT_PACKAGES += \
     libshim_ril_hima
 
 # codeaurora telephony-ext
-PRODUCT_PACKAGES += \
-    telephony-ext
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+#PRODUCT_PACKAGES += \
+#    telephony-ext
+#PRODUCT_BOOT_JARS += \
+#    telephony-ext
 
 # Seccomp
 PRODUCT_COPY_FILES += \
