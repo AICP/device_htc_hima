@@ -303,7 +303,8 @@ PRODUCT_PACKAGES += \
 # Protobuf
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-vendorcompat \
-    libprotobuf-cpp-lite-vendorcompat
+    libprotobuf-cpp-lite-vendorcompat \
+    libprotobuf-legacy
 
 # QMI
 PRODUCT_PACKAGES += \
