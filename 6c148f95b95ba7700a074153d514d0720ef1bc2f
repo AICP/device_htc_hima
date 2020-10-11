@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "34d7d83a_e0c858b6",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1375
+      },
+      "writtenOn": "2020-10-11T18:08:00Z",
+      "side": 1,
+      "message": "/system/vendor? /vendor should fit better,or?",
+      "revId": "6c148f95b95ba7700a074153d514d0720ef1bc2f",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": true
+    }
+  ]
+}
