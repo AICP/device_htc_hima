@@ -320,7 +320,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
-    libshim_ril_hima
+    libshim_ril
 
 # codeaurora telephony-ext
 PRODUCT_PACKAGES += \
