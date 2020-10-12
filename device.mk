@@ -252,7 +252,7 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.hima
 
 # LiveDisplay
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-legacymm
 
 # Media
@@ -323,10 +323,10 @@ PRODUCT_PACKAGES += \
     libshim_ril
 
 # codeaurora telephony-ext
-PRODUCT_PACKAGES += \
-    telephony-ext
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+#PRODUCT_PACKAGES += \
+#    telephony-ext
+#PRODUCT_BOOT_JARS += \
+#    telephony-ext
 
 # Seccomp
 PRODUCT_COPY_FILES += \
