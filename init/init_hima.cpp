@@ -36,7 +36,6 @@
 #include "vendor_init.h"
 
 using android::base::GetProperty;
-using android::init::property_set;
 
 void property_override(char const prop[], char const value[]) {
     prop_info *pi;
@@ -45,6 +44,14 @@ void property_override(char const prop[], char const value[]) {
     if (pi)
         __system_property_update(pi, value, strlen(value));
     else
+        __system_property_add(prop, strlen(prop), value, strlen(value));
+}
+
+void property_set(char const prop[], char const value[]) {
+    prop_info *pi;
+
+    pi = (prop_info*) __system_property_find(prop);
+    if (!pi)
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
