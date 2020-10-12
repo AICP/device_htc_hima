@@ -237,7 +237,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # JamesDSPManager
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     JamesDSPManager
 
 # Keymaster
@@ -251,7 +251,7 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.hima
 
 # LiveDisplay
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-legacymm
 
 # Media
@@ -322,10 +322,10 @@ PRODUCT_PACKAGES += \
     libshim_ril
 
 # codeaurora telephony-ext
-PRODUCT_PACKAGES += \
-    telephony-ext
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+#PRODUCT_PACKAGES += \
+#    telephony-ext
+#PRODUCT_BOOT_JARS += \
+#    telephony-ext
 
 # Seccomp
 PRODUCT_COPY_FILES += \
