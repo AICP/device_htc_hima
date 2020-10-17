@@ -138,9 +138,9 @@
 
         <!-- input devices -->
         <!-- used for input handset -->
-        <device name="SND_DEVICE_IN_HANDSET_MIC" alias="line-vr" />
-        <device name="SND_DEVICE_IN_HANDSET_DMIC" alias="line-vr" />
-        <device name="SND_DEVICE_IN_HANDSET_STEREO_DMIC" alias="line-vr" />
+        <device name="SND_DEVICE_IN_HANDSET_MIC" alias="line-voice" />
+        <device name="SND_DEVICE_IN_HANDSET_DMIC" alias="dmic-endfire" />
+        <device name="SND_DEVICE_IN_HANDSET_STEREO_DMIC" alias="dmic-endfire" />
 
         <!-- used for voip handset -->
         <device name="SND_DEVICE_IN_HANDSET_MIC_AEC" alias="handset-hw-voip" />
@@ -151,9 +151,9 @@
         <device name="SND_DEVICE_IN_HANDSET_DMIC_AEC_NS" alias="handset-hw-voip" />
 
         <!-- used for input speaker -->
-        <device name="SND_DEVICE_IN_SPEAKER_MIC" alias="line-vr" />
-        <device name="SND_DEVICE_IN_SPEAKER_DMIC" alias="line-vr" />
-        <device name="SND_DEVICE_IN_SPEAKER_STEREO_DMIC" alias="line-vr" />
+        <device name="SND_DEVICE_IN_SPEAKER_MIC" alias="line-voice" />
+        <device name="SND_DEVICE_IN_SPEAKER_DMIC" alias="speaker-dmic-endfire" />
+        <device name="SND_DEVICE_IN_SPEAKER_STEREO_DMIC" alias="speaker-dmic-endfire" />
 
         <!-- used for voip speaker -->
         <device name="SND_DEVICE_IN_SPEAKER_MIC_AEC" alias="line-hw-voip" />
