@@ -18,6 +18,11 @@
 #define __unused  __attribute__((__unused__))
 #endif
 
+//#define LOG_NDEBUG 0
+
+#include <log/log.h>
+#include <cutils/properties.h>
+
 signed int __htclog_read_masks(char *buf __unused, signed int len __unused)
 {
     return 0;
@@ -25,7 +30,11 @@ signed int __htclog_read_masks(char *buf __unused, signed int len __unused)
 
 int __htclog_init_mask(const char *a1 __unused, unsigned int a2 __unused, int a3 __unused)
 {
+#if !(LOG_NDEBUG)
+    return property_get_int32("debug.htc.logmask", 0);
+#else
     return 0;
+#endif
 }
 
 int __htclog_print_private(int a1 __unused, const char *a2 __unused, const char *fmt __unused, ...)
