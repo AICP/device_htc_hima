@@ -18,6 +18,21 @@
 #define __unused  __attribute__((__unused__))
 #endif
 
+//#define LOG_NDEBUG 0
+
+#define HTC_LOGLEVEL_VERBOSE 1
+#define HTC_LOGLEVEL_DEBUG (1 << 1)
+#define HTC_LOGLEVEL_INFO (1 << 2)
+#define HTC_LOGLEVEL_WARN (1 << 3)
+#define HTC_LOGLEVEL_ERROR (1 << 4)
+#define HTC_LOGLEVEL_FATAL (1 << 5)
+
+#define HTC_LOGLEVEL_DEFAULT (HTC_LOGLEVEL_INFO | HTC_LOGLEVEL_WARN | HTC_LOGLEVEL_ERROR | HTC_LOGLEVEL_FATAL)
+#define HTC_LOGLEVEL_ALL (HTC_LOGLEVEL_VERBOSE | HTC_LOGLEVEL_DEBUG | HTC_LOGLEVEL_INFO | HTC_LOGLEVEL_WARN | HTC_LOGLEVEL_ERROR | HTC_LOGLEVEL_FATAL)
+
+#include <log/log.h>
+#include <cutils/properties.h>
+
 signed int __htclog_read_masks(char *buf __unused, signed int len __unused)
 {
     return 0;
@@ -25,7 +40,11 @@ signed int __htclog_read_masks(char *buf __unused, signed int len __unused)
 
 int __htclog_init_mask(const char *a1 __unused, unsigned int a2 __unused, int a3 __unused)
 {
-    return 0;
+#if !(LOG_NDEBUG)
+    return property_get_int32("debug.htc.logmask", property_get_int32("persist.debug.htc.logmask", HTC_LOGLEVEL_ALL));
+#else
+    return HTC_LOGLEVEL_DEFAULT;
+#endif
 }
 
 int __htclog_print_private(int a1 __unused, const char *a2 __unused, const char *fmt __unused, ...)
