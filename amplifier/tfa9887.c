@@ -1453,6 +1453,7 @@ static int tfa9887_hw_init(struct tfa9887_amp_t *amp, int sample_rate)
         ALOGE("%s: Unable to select input: %d\n", __func__, rc);
         goto priv_init_err;
     }
+
     rc = tfa9887_hw_power(amp, true);
     if (rc) {
         ALOGE("%s: Unable to power up: %d\n", __func__, rc);
@@ -1714,6 +1715,30 @@ static int tfa9887_lock(struct tfa9887_amp_t *amp, bool lock)
     return rc;
 }
 
+static int tfa9887_lock_init(struct tfa9887_amp_t *amp, bool lock)
+{
+    int rc;
+    int cmd = lock ? 1 : 0;
+
+    if (!amp) {
+        return -ENODEV;
+    }
+
+    if (amp->fd < 0) {
+        return -ENODEV;
+    }
+
+    rc = ioctl(amp->fd, TFA9895_KERNEL_LOCK_INIT(cmd), &cmd);
+    if (rc) {
+        rc = -errno;
+        ALOGE("%s: Failed to lock_init amplifier: %d\n",
+                __func__, rc);
+        return rc;
+    }
+
+    return rc;
+}
+
 static int tfa9887_enable_dsp(struct tfa9887_amp_t *amp, bool enable)
 {
     int rc;
@@ -1811,6 +1836,7 @@ int tfa9887_open(void)
         /* Open I2S interface while DSP ops are occurring */
         pthread_create(&amp->write_thread, NULL, write_dummy_data, amp);
         pthread_mutex_lock(&amp->mutex);
+        rc = tfa9887_lock_init(amp, false);
         while (!amp->writing) {
             pthread_cond_wait(&amp->cond, &amp->mutex);
         }
@@ -1977,14 +2003,26 @@ int tfa9887_set_mode(audio_mode_t mode)
 
     for (i = 0; i < AMP_MAX; i++) {
         amp = &amps[i];
+
         if (dsp_mode == amp->mode) {
             ALOGV("No mode change needed, already mode %d", dsp_mode);
             continue;
         }
+
+        /* Open I2S interface while DSP ops are occurring */
+        amp->initializing=true;
+        amp->writing = false;
+        pthread_create(&amp->write_thread, NULL, write_dummy_data, amp);
+        pthread_mutex_lock(&amp->mutex);
+        rc = tfa9887_lock_init(amp, false);
+        while (!amp->writing) {
+            pthread_cond_wait(&amp->cond, &amp->mutex);
+        }
+        pthread_mutex_unlock(&amp->mutex);
+
         rc = tfa9887_lock(amp, true);
         if (rc) {
-            /* Try next amp */
-            continue;
+            goto set_mode_i2s_shutdown;
         }
         rc = tfa9887_mute(amp, TFA9887_MUTE_DIGITAL);
         rc = tfa9887_set_dsp_mode(amp, dsp_mode);
@@ -1994,6 +2032,11 @@ int tfa9887_set_mode(audio_mode_t mode)
         }
         rc = tfa9887_mute(amp, TFA9887_MUTE_OFF);
         rc = tfa9887_lock(amp, false);
+
+set_mode_i2s_shutdown:
+        /* Shut down I2S interface */
+        amp->initializing = false;
+        pthread_join(amp->write_thread, NULL);
     }
 
     ALOGV("%s: Set amplifier audio mode to %d\n", __func__, mode);
