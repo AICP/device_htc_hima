@@ -1,6 +1,7 @@
 #
 # Copyright (C) 2015 The CyanogenMod Project
 # Copyright 2016-2018 The LineageOS Project
+# Copyright 2020 Android Ice Cold Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -38,7 +39,6 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno430
 
 TARGET_USES_64_BIT_BINDER := true
 BUILD_BROKEN_DUP_RULES := true
-BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 BUILD_BROKEN_PREBUILT_ELF_FILES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
