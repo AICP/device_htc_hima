@@ -43,17 +43,6 @@ LOCAL_C_INCLUDES:= \
     $(LOCAL_PATH) \
     $(TARGET_OUT_HEADERS)/libflp
 
-LOCAL_COPY_HEADERS_TO:= libloc_eng/
-LOCAL_COPY_HEADERS:= \
-    LocEngAdapter.h \
-    loc.h \
-    loc_eng.h \
-    loc_eng_xtra.h \
-    loc_eng_ni.h \
-    loc_eng_agps.h \
-    loc_eng_msg.h \
-    loc_eng_log.h
-
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
