@@ -18,6 +18,7 @@
 */
 package com.aicp.device
 
+import android.os.SystemProperties;
 import android.util.Log
 import java.io.*
 
@@ -205,5 +206,16 @@ object Utils {
         }
         if (DEBUG) Log.e(TAG, "getFileValueDual: file / default value:$filename / $defValue")
         return defValue
+    }
+
+    fun getSystemProp(prop: String): String {
+        val getProp = SystemProperties.get(prop, "");
+        Log.d(TAG,"getSystemProp: $prop value: $getProp")
+        return getProp;
+    }
+
+    fun setSystemProp(prop: String, value: String) {
+        val setProp = SystemProperties.set(prop, value);
+        Log.d(TAG,"setsystemProp: $prop value: $value")
     }
 }
