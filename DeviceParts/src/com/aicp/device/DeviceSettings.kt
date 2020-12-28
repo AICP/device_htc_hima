@@ -35,6 +35,11 @@ class DeviceSettings : PreferenceFragment(), Preference.OnPreferenceChangeListen
         mFastChargeSwitch!!.setEnabled(FastChargeSwitch.Companion.isSupported)
         mFastChargeSwitch!!.setChecked(FastChargeSwitch.Companion.isCurrentlyEnabled(this.getContext()))
         mFastChargeSwitch!!.setOnPreferenceChangeListener(FastChargeSwitch(getContext()))
+
+        mSpeakerProtectionSwitch = findPreference(KEY_SPEAKER_PROTECTION) as TwoStatePreference?
+        mSpeakerProtectionSwitch!!.setEnabled(true)
+        mSpeakerProtectionSwitch!!.setChecked(SpeakerProtectionSwitch.Companion.isCurrentlyEnabled(this.getContext()))
+        mSpeakerProtectionSwitch!!.setOnPreferenceChangeListener(SpeakerProtectionSwitch(getContext()))
     }
 
     override fun onPreferenceTreeClick(preference: Preference?): Boolean {
@@ -50,7 +55,9 @@ class DeviceSettings : PreferenceFragment(), Preference.OnPreferenceChangeListen
         const val KEY_FASTCHARGE = "fastcharge"
         const val KEY_BACKLIGHT_DIMMER = "backlight_dimmer"
         const val KEY_HEADPHONE_GAIN = "headphone_gain"
+        const val KEY_SPEAKER_PROTECTION = "speaker_protection"
         const val KEY_SETTINGS_PREFIX = "device_setting_"
         private var mFastChargeSwitch: TwoStatePreference? = null
+        private var mSpeakerProtectionSwitch: TwoStatePreference? = null
     }
 }
