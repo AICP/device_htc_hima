@@ -39,8 +39,12 @@ class Startup : BroadcastReceiver() {
         }
 
         fun restoreAfterUserSwitch(context: Context) {
-            val enabled = Settings.System.getInt(context.getContentResolver(), FastChargeSwitch.Companion.SETTINGS_KEY, 0) != 0
-            restore(FastChargeSwitch.Companion.file, enabled)
+            val enabledFastcharge = Settings.System.getInt(context.getContentResolver(), FastChargeSwitch.Companion.SETTINGS_KEY, 0) != 0
+            restore(FastChargeSwitch.Companion.file, enabledFastcharge)
+            val enabledSpeakerProtection = Settings.System.getInt(context.getContentResolver(), SpeakerProtectionSwitch.Companion.SETTINGS_KEY, 0) != 0
+            if (enabledSpeakerProtection) {
+                SpeakerProtectionSwitch.Companion.restore("true")
+            }
             VibratorStrengthPreference.Companion.restore(context)
             BacklightDimmerPreference.Companion.restore(context)
             HeadphoneGainPreference.restore(context)
