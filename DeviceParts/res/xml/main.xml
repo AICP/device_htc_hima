@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-	    <Preference
+    <Preference
         android:key="gesture_category"
         android:title="@string/category_gestures_title"
         android:icon="@drawable/ic_gesture"
@@ -49,6 +49,12 @@
             android:icon="@drawable/ic_hp_gain"
             android:summary="@string/headphone_gain_summary"
             android:persistent="false" />
+    <SwitchPreference
+        android:key="speaker_protection"
+        android:summary="@string/speakerprotection_summary"
+        android:title="@string/speakerprotection_title"
+        android:icon="@drawable/ic_speaker_gain"
+        android:defaultValue="false"/>
     </PreferenceCategory>
 
     <PreferenceCategory
