@@ -208,6 +208,7 @@ void vendor_load_properties() {
         property_override("ro.com.google.clientidbase", "android-verizon");
     }
 
+    property_override("persist.vendor.audio.speaker.prot.enable", "false");
     device = GetProperty("ro.product.device", "");
     LOG(INFO) << "Found bootmid '" << bootmid.c_str() <<
         "' setting build properties for '" << device.c_str() << "' device\n";
