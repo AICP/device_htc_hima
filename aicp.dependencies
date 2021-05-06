@@ -10,9 +10,5 @@
   {
     "repository": "AICP/packages_apps_FlipFlap",
     "target_path": "packages/apps/FlipFlap"
-   },
-  {
-    "repository":  "AICP/packages_resources_deviceparts",
-    "target_path": "packages/resources/deviceparts"
   }
 ]
