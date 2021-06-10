@@ -1,2 +1,0 @@
-# speaker protection resources
-106947/1 https://gerrit.aicp-rom.com packages/resources/deviceparts
