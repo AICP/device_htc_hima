@@ -73,6 +73,9 @@ void property_override_fingerprints(char const value[])
     property_override("ro.bootimage.build.fingerprint", value);
     property_override("ro.odm.build.fingerprint", value);
     property_override("ro.system.build.fingerprint", value);
+    property_override("ro.build.stock_fingerprint", value);
+    property_override("ro.product.build.fingerprint", value);
+    property_override("ro.system_ext.build.fingerprint", value);
 }
 
 void cdma_properties(char const default_cdma_sub[], char const default_network[]) {
@@ -209,6 +212,7 @@ void vendor_load_properties() {
     }
 
     property_override("persist.vendor.audio.speaker.prot.enable", "false");
+    property_override("ro.com.google.clientidbase", "android-htc");
     device = GetProperty("ro.product.device", "");
     LOG(INFO) << "Found bootmid '" << bootmid.c_str() <<
         "' setting build properties for '" << device.c_str() << "' device\n";
