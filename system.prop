@@ -21,6 +21,9 @@ hpx_send_params=1
 persist.vendor.audio.spkr.cal.duration=10
 audio.deep_buffer.media=true
 
+# BPF
+ro.kernel.ebpf.supported=false
+
 # Media
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=6
