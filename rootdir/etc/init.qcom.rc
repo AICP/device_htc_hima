@@ -448,6 +448,7 @@ service ppd /vendor/bin/mm-pp-daemon
     user system
     socket pps stream 0660 system system
     group system graphics
+    disabled
 
 service cameraserver /system/bin/cameraserver_hima
     override
