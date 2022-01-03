@@ -140,10 +140,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl
 
-# DeviceParts
-PRODUCT_PACKAGES += \
-    DeviceParts_hima
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
