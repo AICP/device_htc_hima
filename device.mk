@@ -324,7 +324,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
-    libshim_ril
+    libshim_ril \
+    android.hardware.radio@1.2-radio-service
 
 # codeaurora telephony-ext
 PRODUCT_PACKAGES += \
