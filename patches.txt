@@ -1,0 +1,6 @@
+# ril
+321768/1 https://review.lineageos.org hardware/ril true
+321769/1 https://review.lineageos.org hardware/ril true
+321770/1 https://review.lineageos.org hardware/ril true
+321771/1 https://review.lineageos.org hardware/ril true
+321772/1 https://review.lineageos.org hardware/ril true
