@@ -393,9 +393,6 @@
     <bool name="config_proximityCheckOnWake">true</bool>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
 
-    <!-- Default state for LiveDisplay -->
-    <bool name="config_liveDisplayAvailable">true</bool>
-
     <!-- System info -->
     <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone7/temp</string>
     <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string>
