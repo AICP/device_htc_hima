@@ -1,4 +1,7 @@
+allow surfaceflinger bootanim:dir search;
+allow surfaceflinger untrusted_app:process getattr;
 allow surfaceflinger sysfs_graphics:lnk_file r_file_perms;
+allow surfaceflinger system_app:process getattr;
 
 add_service(surfaceflinger, default_android_service)
 binder_call(surfaceflinger, init)
