@@ -6,3 +6,6 @@
 321770/1 https://review.lineageos.org hardware/ril true
 321771/1 https://review.lineageos.org hardware/ril true
 321772/1 https://review.lineageos.org hardware/ril true
+# temp
+116427/1 https://gerrit.aicp-rom.com device/htc/hima true
+116428/1 https://gerrit.aicp-rom.com device/htc/hima true
