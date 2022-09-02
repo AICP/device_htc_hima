@@ -123,6 +123,29 @@
     <!-- Flag specifying whether VoLTE & VT is available on device -->
     <bool name="config_device_volte_available">true</bool>
 
+
+    <!-- ImsService package name to bind to by default, if config_dynamic_bind_ims is true -->
+    <string name="config_ims_package">org.codeaurora.ims</string>
+
+    <!-- Flag specifying whether or not IMS will use the ImsResolver dynamically -->
+    <bool name="config_dynamic_bind_ims">true</bool>
+
+    <!-- Flag specifying whether VoLTE is available on device -->
+    <bool name="config_device_vt_available">true</bool>
+
+    <!-- Enable video pause workaround when enabling/disabling the camera. -->
+    <bool name="config_useVideoPauseWorkaround">true</bool>
+
+    <!-- Flag specifying whether WFC over IMS is availasble on device -->
+    <bool name="config_device_wfc_ims_available">true</bool>
+
+    <!-- If Voice Radio Technology is RIL_RADIO_TECHNOLOGY_LTE:14 or
+         RIL_RADIO_TECHNOLOGY_UNKNOWN:0 this is the value that should be used instead.
+         A configuration value of RIL_RADIO_TECHNOLOGY_UNKNOWN:0 means
+         there is no replacement value and that the default assumption
+         for phone type (GSM) should be used. -->
+    <integer name="config_volte_replacement_rat">0</integer>
+
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
