@@ -6,3 +6,4 @@
 321770/1 https://review.lineageos.org hardware/ril true
 321771/1 https://review.lineageos.org hardware/ril true
 321772/1 https://review.lineageos.org hardware/ril true
+118485/1 https://gerrit.aicp-rom.com frameworks/base
