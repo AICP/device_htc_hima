@@ -17,3 +17,4 @@
 96984/1 https://gerrit.aicp-rom.com frameworks/av
 # fix audio of wfd session/aic-audio
 102211/1 https://gerrit.aicp-rom.com frameworks/av
+118485/1 https://gerrit.aicp-rom.com frameworks/base
