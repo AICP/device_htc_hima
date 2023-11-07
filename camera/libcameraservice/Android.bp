@@ -39,7 +39,7 @@ cc_library_shared {
     name: "libcameraservice_hima",
     defaults: [
         "no_cameraserver_defaults",
-        "needs_camera_boottime_defaults",
+//        "needs_camera_boottime_defaults",
     ],
 
     // Camera service source

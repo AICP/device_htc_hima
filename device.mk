@@ -88,7 +88,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.service \
     android.hardware.audio.effect@7.0-impl \
-    audio.a2dp.default \
     audio.primary.msm8994 \
     audio.r_submix.default \
     audio.usb.default \
@@ -167,7 +166,7 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.4-service.clearkey \
-    android.hidl.base@1.0 \
+#    android.hidl.base@1.0 \
     libshim_drm
 
 
